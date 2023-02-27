@@ -1,0 +1,37 @@
+// TOGGLE 4th bit
+
+#include <stdio.h>
+
+typedef unsigned int UINT;
+
+/*
+    0000 0000 0000 0000 0000 0000 0111 0000
+      0    0   0     0    0    0   7    0
+      00000070  ->  Hexadecimal number
+
+      0X00000070   -> total 8 numbers because of 32 bit
+*/
+
+UINT Toggle_BIt(UINT No)
+{
+    UINT iMask = 0X00000070;
+
+    return(No ^ iMask);
+}
+
+int main()
+{
+    UINT Value = 0;
+    UINT iRet = 0;
+
+    printf("Enter any value : \n");
+    scanf("%u",&Value);
+    
+    iRet = Toggle_BIt(Value);
+
+    printf("Updated number is : %d\n",iRet);
+
+    return 0;
+}
+
+
